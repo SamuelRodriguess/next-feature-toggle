@@ -2,6 +2,9 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Getting Started
 
+![image](https://github.com/SamuelRodriguess/next-feature-toggle/assets/62268414/147cd488-6b7d-42f8-a9d6-215c46dae234)
+
+
 First, run the development server:
 
 ```bash
