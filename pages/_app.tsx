@@ -1,26 +1,26 @@
 import "../styles/globals.css";
-import { FeatureToggle } from "../components/Toggle";
+import { ToggleContext } from "../components/ToggleContext";
 import { useCallback, useEffect, useState } from "react";
-import { fetchFeatures } from "../service/getToggleData";
+import { fetchToggleData } from "../service/getToggleData";
 
 function MyApp({ Component, pageProps }) {
-  const [enabledFeatures, setFeatures] = useState<string[]>([]);
+  const [toggleValue, setToggle] = useState<string[]>([]);
 
   const processFeatures = useCallback(async () => {
-    const featuresResponse = await fetchFeatures();
+    const response = await fetchToggleData();
 
-    setFeatures(featuresResponse);
+    setToggle(response);
   }, []);
 
   useEffect(() => {
     processFeatures();
   }, []);
 
-  return(
-    <FeatureToggle enabledFeatures={enabledFeatures}>
+  return (
+    <ToggleContext enabledFeatures={toggleValue}>
       <Component {...pageProps} />
-    </FeatureToggle>
-  )
+    </ToggleContext>
+  );
 }
 
 export default MyApp;

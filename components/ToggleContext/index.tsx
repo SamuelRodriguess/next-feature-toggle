@@ -6,7 +6,7 @@ type Props = {
   enabledFeatures: string[];
 };
 
-export const FeatureToggle = ({ children, enabledFeatures }: Props) => {
+export const ToggleContext = ({ children, enabledFeatures }: Props) => {
   return (
     <FeatureToggleContext.Provider value={{ enabledFeatures }}>
       {children}

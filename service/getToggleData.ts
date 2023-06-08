@@ -1,12 +1,12 @@
 import axios from "axios";
 
-export const fetchFeatures = async () => {
+export const fetchToggleData = async () => {
   try {
-    const { data } = await axios.get<string[]>("/api/getFeatures");
+    const { data } = await axios.get<string[]>("/api/toggle");
 
     return data;
   } catch (e) {
-    console.log("Something went wrong");
+    console.error("Something went wrong");
   }
 
   return [] as string[];
